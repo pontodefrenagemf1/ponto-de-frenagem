@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação 2026 | Ponto de Frenagem</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        table { width: 90%; margin: 20px auto; border-collapse: collapse; background: #1a1a1a; color: white; margin-bottom: 50px; }
+        th, td { padding: 12px; border: 1px solid #333; text-align: center; }
+        th { background: #e10600; text-transform: uppercase; }
+        tr:nth-child(even) { background: #252525; }
+        h2 { text-align: center; margin-top: 40px; }
+        
+        /* Ajuste para mobile */
+        @media (max-width: 600px) {
+            table { width: 98%; font-size: 0.8em; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ponto de Frenagem</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+                <li><a href="noticias.html" style="color: white; text-decoration: none;">Notícias</a></li>
+                <li><a href="calendario.html" style="color: white; text-decoration: none;">Calendário</a></li>
+                <li><a href="classificacao.html" style="color: white; text-decoration: none;">Classificação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Tabela de Pilotos</h2>
+        <table id="tabelaPilotos">
+            <thead><tr><th>Piloto</th><th>Equipe</th><th>Pontos</th></tr></thead>
+            <tbody>
+                <tr><td>Kimi Antonelli</td><td>Mercedes</td><td>131</td></tr>
+                <tr><td>George Russell</td><td>Mercedes</td><td>88</td></tr>
+                <tr><td>Charles Leclerc</td><td>Ferrari</td><td>75</td></tr>
+                <tr><td>Lewis Hamilton</td><td>Ferrari</td><td>72</td></tr>
+                <tr><td>Lando Norris</td><td>McLaren</td><td>58</td></tr>
+                <tr><td>Oscar Piastri</td><td>McLaren</td><td>48</td></tr>
+                <tr><td>Max Verstappen</td><td>Red Bull</td><td>43</td></tr>
+                <tr><td>Pierre Gasly</td><td>Alpine</td><td>20</td></tr>
+                <tr><td>Oliver Bearman</td><td>Haas</td><td>18</td></tr>
+                <tr><td>Liam Lawson</td><td>Racing Bulls</td><td>16</td></tr>
+                <tr><td>Franco Colapinto</td><td>Alpine</td><td>15</td></tr>
+                <tr><td>Isack Hadjar</td><td>Red Bull</td><td>14</td></tr>
+                <tr><td>Carlos Sainz</td><td>Williams</td><td>6</td></tr>
+                <tr><td>Arvid Lindblad</td><td>Racing Bulls</td><td>5</td></tr>
+                <tr><td>Gabriel Bortoleto</td><td>Audi</td><td>2</td></tr>
+                <tr><td>Esteban Ocon</td><td>Haas</td><td>1</td></tr>
+                <tr><td>Alex Albon</td><td>Williams</td><td>1</td></tr>
+                <tr><td>Nico Hulkenberg</td><td>Audi</td><td>0</td></tr>
+                <tr><td>Valtteri Bottas</td><td>Cadillac</td><td>0</td></tr>
+                <tr><td>Sérgio Pérez</td><td>Cadillac</td><td>0</td></tr>
+                <tr><td>Lance Stroll</td><td>Aston Martin</td><td>0</td></tr>
+                <tr><td>Fernando Alonso</td><td>Aston Martin</td><td>0</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Tabela de Construtores</h2>
+        <table id="tabelaEquipes">
+            <thead><tr><th>Equipe</th><th>Pontos</th></tr></thead>
+            <tbody>
+                <tr><td>Mercedes</td><td>219</td></tr>
+                <tr><td>Ferrari</td><td>147</td></tr>
+                <tr><td>McLaren</td><td>106</td></tr>
+                <tr><td>Red Bull</td><td>57</td></tr>
+                <tr><td>Alpine</td><td>35</td></tr>
+                <tr><td>Racing Bulls</td><td>21</td></tr>
+                <tr><td>Haas</td><td>19</td></tr>
+                <tr><td>Williams</td><td>7</td></tr>
+                <tr><td>Audi</td><td>2</td></tr>
+                <tr><td>Cadillac</td><td>0</td></tr>
+                <tr><td>Aston Martin</td><td>0</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer style="background: #111; color: #777; padding: 30px; text-align: center; margin-top: 50px; border-top: 2px solid #e10600;">
+        <div style="margin-bottom: 15px;">
+            <a href="sobre.html" style="color: #ccc; margin: 0 10px; text-decoration: none; font-size: 0.9em;">Sobre</a> |
+            <a href="contato.html" style="color: #ccc; margin: 0 10px; text-decoration: none; font-size: 0.9em;">Contato</a> |
+            <a href="privacidade.html" style="color: #ccc; margin: 0 10px; text-decoration: none; font-size: 0.9em;">Política de Privacidade</a>
+        </div>
+        <p style="font-size: 0.8em;">&copy; 2026 Ponto de Frenagem - Portal de F1. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function ordenarTabela(idTabela) {
+            const tabela = document.getElementById(idTabela);
+            const linhas = Array.from(tabela.tBodies[0].rows);
+            linhas.sort((a, b) => {
+                const pontosA = parseInt(a.cells[a.cells.length - 1].innerText);
+                const pontosB = parseInt(b.cells[b.cells.length - 1].innerText);
+                return pontosB - pontosA;
+            });
+            tabela.tBodies[0].append(...linhas);
+        }
+
+        ordenarTabela("tabelaPilotos");
+        ordenarTabela("tabelaEquipes");
+    </script>
+</body>
+</html>

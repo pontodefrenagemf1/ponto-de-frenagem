@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Telemetria - GP Canadá 2026 | Ponto de Frenagem</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        .grafico-wrapper { margin-bottom: 40px; text-align: center; background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #444; }
+        .grafico-wrapper img { width: 100%; border-radius: 4px; border: 1px solid #333; }
+        .grafico-titulo { color: #e10600; margin-bottom: 15px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ponto de Frenagem</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="noticias.html">Notícias</a></li>
+                <li><a href="calendario.html">Calendário</a></li>
+                <li><a href="classificacao.html">Classificação</a></li>
+                <li><a href="telemetria.html">Telemetria</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-geral">
+        <main class="conteudo-principal">
+            <h2>Telemetria: GP do Canadá 2026</h2>
+            
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Ritmo de Corrida (Box Plot)</h3>
+                <img src="/img/canada-pace.png" alt="Race Pace">
+            </div>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Tempos por Setor e Speed Trap</h3>
+                <img src="/img/canada-timings.jpg" alt="Timings">
+            </div>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Top Speeds (Velocidade Máxima)</h3>
+                <img src="/img/destaque-telemetria.jpg" alt="Top Speeds">
+            </div>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Gap Médio para o Líder</h3>
+                <img src="/img/canada-avg-gap.jpg" alt="Average Gap">
+            </div>
+
+            <div class="grafico-wrapper">
+                <h3 class="grafico-titulo">Estratégia de Pneus</h3>
+                <img src="/img/canada-tyres.jpg" alt="Tyre Strategies">
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Navegação Rápida</h3>
+            <a href="classificacao.html">Classificação Geral</a>
+            <a href="calendario.html">Calendário 2026</a>
+            <hr style="border: 0; border-top: 1px solid #444; margin: 15px 0;">
+            <p style="font-size: 0.8em; text-align: center;">Dados coletados via F1TelemetryData</p>
+        </aside>
+    </div>
+</body>
+</html>

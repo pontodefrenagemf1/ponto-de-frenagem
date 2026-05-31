@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ponto de Frenagem | Portal F1</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        /* Estilos do Novo Layout */
+        .container-geral { display: flex; max-width: 1200px; margin: 0 auto; gap: 30px; padding: 20px; }
+        .conteudo-principal { flex: 3; }
+        .sidebar { flex: 1; background: #1a1a1a; padding: 20px; border-radius: 8px; color: white; height: fit-content; }
+        .sidebar h3 { color: #e10600; text-align: center; margin-top: 0; }
+        .sidebar a { color: #fff; text-decoration: none; font-weight: bold; display: block; margin-top: 15px; text-align: center; background: #e10600; padding: 10px; border-radius: 5px; }
+        .sidebar p { margin: 5px 0; font-size: 0.9em; }
+        
+        .btn-telemetria { 
+            background: #e10600 !important; 
+            padding: 10px; 
+            border-radius: 5px; 
+            color: white; 
+            text-transform: uppercase; 
+            font-size: 0.9em; 
+            margin-top: 10px !important;
+        }
+        
+        .banner-loja { transition: transform 0.3s ease; }
+        .banner-loja:hover { transform: scale(1.03); }
+    </style>
+</head>
+<body>
+
+    <!-- Logo Fixa Adicionada -->
+    <img src="/img/logo.png" alt="Logo Ponto de Frenagem" class="logo-fixa">
+
+    <header>
+        <h1>Ponto de Frenagem</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+                <li><a href="noticias.html" style="color: white; text-decoration: none;">Notícias</a></li>
+                <li><a href="calendario.html" style="color: white; text-decoration: none;">Calendário</a></li>
+                <li><a href="classificacao.html" style="color: white; text-decoration: none;">Classificação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-geral">
+        <main class="conteudo-principal">
+            
+            <div id="countdown" style="background: #1a1a1a; color: white; text-align: center; padding: 20px; margin: 0 0 30px 0; border-radius: 8px; border: 2px solid #e10600;">
+                <h2 id="gp-name" style="margin-top: 0;">Próxima Corrida: GP de Mônaco</h2>
+                <p id="timer" style="font-size: 1.5em; font-weight: bold; color: #e10600;"></p>
+                <img src="/img/pista-monaco.png" alt="Layout da Pista" style="max-width: 300px; margin-top: 10px; border: 1px solid #444;">
+            </div>
+
+            <h2 style="text-align: center; margin-top: 30px;">Últimas Notícias</h2>
+            <section class="noticias-container">
+    
+    <a href="russell-revelacao-antonelli.html" class="card">
+        <img src="/img/russel-revelaçao-antonelli.jpg" alt="George Russell e Kimi Antonelli">
+        <h3>George Russell Faz Revelação Sobre Antonelli e Acende Disputa</h3>
+    </a>
+
+    <a href="mclaren-motor-proprio.html" class="card">
+        <img src="/img/noticia4.jpg" alt="McLaren Motor">
+        <h3>McLaren pode desenvolver motor próprio na F1?</h3>
+    </a>
+
+    <a href="audi-canada-bortoleto.html" class="card">
+        <img src="/img/noticia1.jpg" alt="Audi GP Canadá">
+        <h3>Estratégia da Audi FRACASSA no GP do Canadá</h3>
+    </a>
+
+    </section>
+
+            <h3 style="color: #e10600; text-align: center; margin-top: 40px;">Destaque do Canal: Ponto de Frenagem</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/QqhtVRtbLTI?si=HGdBLNuX5ODqLnnh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Top 3 Pilotos</h3>
+            <p>1. Kimi Antonelli - 131 pts</p>
+            <p>2. George Russell - 88 pts</p>
+            <p>3. Charles Leclerc - 75 pts</p>
+            <a href="classificacao.html">VER CLASSIFICAÇÃO COMPLETA</a>
+
+            <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
+
+            <h3>Oferta do Dia</h3>
+            <a href="https://s.shopee.com.br/AKXpp6pWON" target="_blank" class="banner-loja" style="background: none; padding: 0;">
+                <img src="/img/camisa-ferrari.jpg" alt="Produto F1" style="width: 100%; border-radius: 5px; border: 2px solid #e10600;">
+            </a>
+
+            <h3 style="margin-top: 20px;">Nossa Loja</h3>
+            <a href="loja.html" style="background: #e10600; padding: 15px; border-radius: 5px; color: white; text-decoration: none; display: block; text-align: center; font-weight: bold; font-size: 1.1em; transition: 0.3s;">
+                🛒 ACESSAR LOJA COMPLETA
+            </a>
+
+            <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
+
+            <h3>Telemetria Destaque</h3>
+            <a href="telemetria.html" style="background: none; padding: 0; margin-top: 10px;">
+                <img src="/img/destaque-telemetria.jpg" alt="Destaque Telemetria" style="width: 100%; border-radius: 5px; border: 1px solid #e10600;">
+            </a>
+            <a href="telemetria.html" class="btn-telemetria">VER DADOS COMPLETOS</a>
+        </aside>
+    </div>
+
+    <footer style="background: #111; color: #777; padding: 30px; text-align: center; margin-top: 50px; border-top: 2px solid #e10600;">
+        <div style="margin-bottom: 15px;">
+            <a href="sobre.html" style="color: #ccc; margin: 0 10px; text-decoration: none; font-size: 0.9em;">Sobre</a> |
+            <a href="contato.html" style="color: #ccc; margin: 0 10px; text-decoration: none; font-size: 0.9em;">Contato</a> |
+            <a href="privacidade.html" style="color: #ccc; margin: 0 10px; text-decoration: none; font-size: 0.9em;">Política de Privacidade</a>
+        </div>
+        <p style="font-size: 0.8em;">&copy; 2026 Ponto de Frenagem - Portal de F1. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const proximaCorrida = new Date("Jun 5, 2026 10:00:00").getTime();
+        const x = setInterval(function() {
+            const agora = new Date().getTime();
+            const distancia = proximaCorrida - agora;
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("timer").innerText = dias + "d " + horas + "h " + minutos + "m para a largada";
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerText = "A corrida começou!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
