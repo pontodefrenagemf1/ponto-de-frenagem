@@ -149,6 +149,7 @@ header nav ul li a:hover {
   color: white;
   transition: 0.3s;
   border: 1px solid #444;
+  overflow: hidden; /* CORREÇÃO APLICADA: Força o corte de imagens que vazam */
 }
 
 .card:hover {
