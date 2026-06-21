@@ -253,3 +253,12 @@ header nav ul li a:hover {
         left: 10px;
     }
 }
+/* Estilo para os preços dos produtos na loja */
+.preco {
+    color: #e10600; /* Vermelho padrão do seu site */
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    display: block;
+    text-align: center; /* Centraliza o preço no card */
+}
