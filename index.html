@@ -161,19 +161,24 @@
     </footer>
 
     <script>
-        const proximaCorrida = new Date("23 agosto  2026 11:00:00").getTime();
-        const x = setInterval(function() {
-            const agora = new Date().getTime();
-            const distancia = proximaCorrida - agora;
-            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("timer").innerText = dias + "d " + horas + "h " + minutos + "m para a largada";
-            if (distancia < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerText = "A corrida começou!";
-            }
-        }, 1000);
-    </script>
+    // Formato em inglês (mês por extenso em inglês o navegador lê sem erros) ou use "2026-08-23T15:00:00"
+    const proximaCorrida = new Date("August 23, 2026 10:00:00").getTime();
+    
+    const x = setInterval(function() {
+        const agora = new Date().getTime();
+        const distancia = proximaCorrida - agora;
+        
+        const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        
+        document.getElementById("timer").innerText = dias + "d " + horas + "h " + minutos + "m para a largada";
+        
+        if (distancia < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerText = "A corrida começou!";
+        }
+    }, 1000);
+</script>
 </body>
 </html>
