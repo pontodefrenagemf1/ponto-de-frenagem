@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Ponto de Frenagem</title>
+    <style>
+        body { background: #000; color: white; font-family: 'Arial', sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        
+        /* Área do Mapa (Topo) */
+        #track-area { flex: 1; border-bottom: 3px solid #e10600; display: flex; align-items: center; justify-content: center; position: relative; }
+        
+        /* Área dos Dados (Base) */
+        #data-area { flex: 2; padding: 15px; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th { color: #e10600; text-align: left; padding: 10px; border-bottom: 1px solid #333; }
+        td { padding: 8px; border-bottom: 1px solid #222; font-size: 0.9em; }
+        
+        .driver-row { display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+    <div id="track-area">
+        <canvas id="trackCanvas"></canvas>
+    </div>
+
+    <div id="data-area">
+        <h3 style="margin-top: 0;">CLASSIFICAÇÃO AO VIVO</h3>
+        <table>
+            <thead>
+                <tr><th>POS</th><th>PILOTO</th><th>GAP</th><th>PNEU</th></tr>
+            </thead>
+            <tbody id="live-table">
+                <!-- Os dados virão do Python aqui -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const socket = io();
+        socket.on('update_f1', function(data) {
+            // Aqui vamos injetar as linhas da tabela via JS
+            const tbody = document.getElementById('live-table');
+            tbody.innerHTML = data.html_rows; // O Python enviará o HTML pronto
+        });
+    </script>
+</body>
+</html>
