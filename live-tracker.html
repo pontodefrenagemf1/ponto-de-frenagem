@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Live Tracker - Ponto de Frenagem</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .header-live {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #15151e;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 5px solid #e10600;
+            margin-bottom: 10px;
+        }
+
+        .header-live h2 {
+            margin: 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .live-badge {
+            background: #e10600;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Tabela de Classificação Estilo TV */
+        .standings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .driver-row {
+            display: flex;
+            align-items: center;
+            background: #1f1f2b;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #888;
+        }
+
+        .pos {
+            width: 25px;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .team-color-bar {
+            width: 4px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .sigla {
+            width: 40px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .gap {
+            margin-left: auto;
+            font-size: 12px;
+            color: #ccc;
+            font-family: monospace;
+        }
+
+        .pneu {
+            margin-left: 10px;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 10px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-live">
+        <h2>GP da Holanda - 2026</h2>
+        <span class="live-badge">🔴 AO VIVO</span>
+    </div>
+
+    <div class="standings-container" id="tabela-pilotos">
+        <!-- Os pilotos entram aqui via Socket.io em tempo real -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('update_f1', (data) => {
+            const container = document.getElementById('tabela-pilotos');
+            container.innerHTML = data.html_rows;
+        });
+    </script>
+</body>
+</html>
